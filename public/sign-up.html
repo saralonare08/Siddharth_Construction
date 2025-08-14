@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url(images/bg2.jpg); /* Ensure this path is correct */
+            background-repeat:no-repeat ;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            height: 105vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container{
+            display: flex;
+            justify-content:left;
+            align-items: center;
+            height: 100vh;
+            padding: 0 50px;
+        }
+
+        .title{
+            max-width: 100%;
+        } 
+
+        .title p{
+            font-size: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .box{
+            width: 450px;
+            height: 70%;
+            background-color: rgba(41, 41, 41, 0.7);;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .box input{
+            width: 96%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: rgb(88, 88, 88);
+            border-radius: 4px; /* Added missing px */
+            border: none;
+            color: white; /* Added to make text visible */
+        }
+
+        .box h2{
+            text-align: center;
+            height: 30px;
+            color: white;
+        }
+
+        .box h4{
+            text-align: center;
+            color: white;
+        }
+
+        .box button:hover{
+            background-color: rgb(152, 48, 11);
+        }
+
+        .box input:hover{
+            background-color:rgb(152, 48, 11);
+        }
+
+        .box button{
+            width: 100%;
+            height: 35px;
+            border-radius: 4px;
+            color: whitesmoke;
+            border: none;
+            background-color: orangered;
+            cursor: pointer;
+        }
+
+        .box .sign-up{
+            text-align: center;
+            text-decoration: none;
+            color: white;
+        }
+            .google-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #4285F4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 10px;
+            }
+            .google-btn i {
+                margin-right: 10px;
+            }
+
+        .login a { /* Style for the login link */
+            color: white;
+            text-decoration: none;
+        }
+
+        .login a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">
+            <h1 style="font-size: 50px; color: rgb(210, 61, 6) ;"><Strong>Siddharth Constructions</Strong></h1>
+            <p style="color: white;">Our aim is to help you build your dream home.</p>
+        </div>
+    </div>
+
+    <div class="box">
+<form id="signupForm" method="POST" action="/sign-up">
+            <h2 style="color: rgb(244, 243, 243);">Sign-Up</h2><br>
+            
+            <input type="text" name="name" id="name" placeholder="Name" required>
+            <input type="email" name="email" id="email" placeholder="E-mail" required>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" required>
+
+            <button type="submit">Sign-Up</button>
+
+            <h4>OR</h4>
+
+            <div>
+                <button type="button" class="google-btn">
+                    <i class="fab fa-google"></i> Sign-Up with Google
+                </button>
+            </div> 
+
+            <h4>OR</h4>
+            
+            <div class="login" style="text-align: center; background-color: transparent;">
+                <a href="login.html">Already have an account? Log-In</a>
+            </div>
+            <br><br><br><br>
+        </form>
+    </div>
+
+<script>
+    document.getElementById("signupForm").addEventListener("submit", function(event) {
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
+        const confirmPassword = document.getElementById("confirmPassword").value.trim();
+
+        if (!name || !email || !password || !confirmPassword) {
+            alert("Please fill in all fields.");
+            event.preventDefault();
+            return;
+        }
+
+        if (password.length < 6) {
+            alert("Password must be at least 6 characters.");
+            event.preventDefault();
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            alert("Passwords do not match.");
+            event.preventDefault();
+            return;
+        }
+
+        // If all good — allow natural form submission to server
+    });
+</script>
+
+
+</body>
+</html>

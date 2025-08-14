@@ -1,0 +1,27 @@
+{
+  "name": "bussiness",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.16.5",
+    "nodemon": "^3.1.10"
+  },
+  "devDependencies": {},
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saralonare08/Siddharth_Construction.git"
+  },
+  "bugs": {
+    "url": "https://github.com/saralonare08/Siddharth_Construction/issues"
+  },
+  "homepage": "https://github.com/saralonare08/Siddharth_Construction#readme",
+  "description": ""
+}
